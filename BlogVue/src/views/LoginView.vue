@@ -1,10 +1,22 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue"
+
+
+const ver = ref('password')
+
+const Mostrar = ()=>{
+  ver.value = ver.value === 'password' ? 'text' : 'password'
+}
+
+</script>
 
 <template>
   <div class="Principal">
     <div class="Img">
       <div class="email"><input type="email" placeholder="                    Email ID" /></div>
-      <div class="password"><input type="password" placeholder="                   Password" /></div>
+      <div class="password"><input :type="ver" placeholder="                   Password" /></div>
+      <input type="checkbox" @click="Mostrar">
+      <br>
       <button class="BUTTON">LOGIN</button>
     </div>
   </div>
@@ -21,8 +33,7 @@
 }
 
 .Img {
-  background-image: url(../assets/Imagen/white-cubes-3d-background.jpg);
-  background-repeat: no-repeat;
+  background: url(../assets/Imagen/white-cubes-3d-background.jpg);
   width: 300px;
   height: 500px;
   border-radius: 20px;
@@ -30,7 +41,7 @@
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
-  box-shadow: 0px 40px 50px 10px; 
+  box-shadow: 0px 40px 50px 10px cornsilk; 
 }
 
 .email,
