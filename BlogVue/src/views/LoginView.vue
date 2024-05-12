@@ -23,14 +23,17 @@ const Mostrar = ()=>{
 </template>
 <style scoped>
 
-
-
-.Principal {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  height: 100vh; 
+*{
+  border-radius: 10px;
 }
+
+.Principal{
+  position: absolute;
+  left: 330px;
+  top: 120px;
+  display: flex;
+}
+
 
 .Img {
   background: url(../assets/Imagen/white-cubes-3d-background.jpg);
@@ -58,7 +61,7 @@ const Mostrar = ()=>{
 .BUTTON {
   width: 150px;
   height: 30px;
-  border: 2px solid black;
+  border: 2px solid #BCBABE;
   border-radius: 20px;
 }
 
