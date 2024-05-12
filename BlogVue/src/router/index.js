@@ -22,7 +22,23 @@ const router = createRouter({
     {
       path : '/etiqueta',
       name : 'etiqueta',
-      component : () => import('../views/EtiquetaView.vue')
+      component : () => import('../views/EtiquetaView.vue'),
+      children :[
+        {
+          path : '',
+          component : () => import('../components/Etiqueta/EtiquetaList.vue')
+        },
+        {
+          path : 'crear',
+          name : 'crear',
+          component : () => import('../components/Etiqueta/EtiquetaCreate.vue')
+        },
+        {
+          path : 'editar',
+          name : 'editar',
+          component : () => import('../components/Etiqueta/EtiquetaUpdate.vue')
+        },
+      ]
     }
   ]
 })

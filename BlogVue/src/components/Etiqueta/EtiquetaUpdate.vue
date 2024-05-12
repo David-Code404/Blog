@@ -1,13 +1,21 @@
-<template>
-  
-</template>
+<script setup>
+import router from '@/router';
 
-<script>
-export default {
 
+function GoBack() {
+    router.go(-1)
 }
+
 </script>
 
-<style>
+<template>
+  <h1>Esto ES Editar Etiqueta</h1>
+  <div>
+    <button @click="GoBack">Cancelar</button>
+  </div>
+</template>
+
+
+<style scoped>
 
 </style>
