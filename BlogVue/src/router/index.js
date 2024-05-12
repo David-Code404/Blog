@@ -39,6 +39,11 @@ const router = createRouter({
           component : () => import('../components/Etiqueta/EtiquetaUpdate.vue')
         },
       ]
+    },
+    {
+      path : '/contacto',
+      name : 'contacto',
+      component : () => import('../views/ContactoView.vue')
     }
   ]
 })
