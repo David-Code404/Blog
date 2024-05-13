@@ -9,12 +9,12 @@ import { UsuariosModule } from './usuarios/usuarios.module';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'usrblog',
-      password: '$aul10345806',
-      database: 'db_blog',
+      type: process.env.DB_TYPE as any,
+      host:  process.env.DB_HOST,
+      port: +process.env.DB_PORT,
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
       entities: [__dirname + '**/*.entity.ts'],
       synchronize: true,
       autoLoadEntities:true,
