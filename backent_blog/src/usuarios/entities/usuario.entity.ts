@@ -16,8 +16,8 @@ export class Usuario {
     @Column('varchar', { length: 45, nullable: false })
     rol: string;
 
-    @Column({ type: 'blob', nullable: true, name: 'imagen' })
-    imagen: Buffer;
+    // @Column({ type: 'blob', nullable: true, name: 'imagen' })
+    // imagen: Buffer;
 
     @CreateDateColumn({ name: 'fecha_creacion' })
     fechaCreacion: Date;
