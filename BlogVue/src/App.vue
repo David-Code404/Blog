@@ -7,13 +7,12 @@
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <router-link to="/etiqueta">Etiqueta</router-link>
-    <router-link to="/login">Login</router-link>
     <router-link to="/contacto">Contactos</router-link>
+    <router-link to="/usuario">Usuarios</router-link>
+    <router-link to="/login">Login</router-link>
   </div>
   <router-view></router-view>
 </template>
 
 
-<style scoped>
-
-</style>
+<style scoped></style>
