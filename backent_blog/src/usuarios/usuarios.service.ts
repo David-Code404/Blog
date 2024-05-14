@@ -50,4 +50,8 @@ export class UsuariosService {
     const usuario = await this.findOne(id);
     return this.usuariosRepository.delete(usuario.id);
   }
+
+
+
+  
 }
