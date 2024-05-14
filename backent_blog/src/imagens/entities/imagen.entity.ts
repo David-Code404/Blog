@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Publicacion } from "src/publicaciones/entities/publicacion.entity";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('imagens')
 export class Imagen {
@@ -17,4 +18,10 @@ export class Imagen {
 
     @UpdateDateColumn({ name: 'fecha_modificacion' })
     fechaModificacion: Date;
+    
+
+    @ManyToOne(()=>Publicacion,publicacion=>publicacion.imagenes)
+    @JoinColumn({name:'id_publicacion',referencedColumnName:'id'})
+    publicacion:Publicacion
+
 }

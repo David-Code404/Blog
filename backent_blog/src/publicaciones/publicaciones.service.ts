@@ -22,8 +22,6 @@ export class PublicacionesService {
     return this.publicacionesRepository.save({
       titulo: createPublicacionDto.titulo.trim(),
       contenido: createPublicacionDto.contenido.trim(),
-      
-    
       usuario: { id: createPublicacionDto.idUsuario },
 
     })

@@ -18,12 +18,7 @@ export class CreatePublicacionDto {
     @MinLength(4, { message: 'El campo contenido de la publicacion no debe ser menor a 4 caracteres' })
     contenido: string;
 
-    @ApiProperty()
-    @IsNotEmpty({ message: 'El campo fecha de publicacion de la publicacion no debe ser vacío' })
-    @IsString({ message: 'El campo fecha de publicacion de la publicacion debe ser de tipo cadena' })
-    @MaxLength(45, { message: 'El campo fecha de publicacion de la publicacion no debe ser mayor a 45 caracteres' })
-    @MinLength(4, { message: 'El campo fecha de publicacion de la publicacion no debe ser menor a 4 caracteres' })
-    fechaPublicacion: string;
+  
 
     @ApiProperty()
     @IsDefined({ message: 'El campo iUsuario debe estar definido' })

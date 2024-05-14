@@ -1,5 +1,5 @@
 import { Publicacion } from "src/publicaciones/entities/publicacion.entity";
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('etiquetas')
 export class Etiqueta {
@@ -21,6 +21,6 @@ export class Etiqueta {
 
     //relacion  muchos a muchos
     @ManyToMany(()=>Publicacion,publicacion=>publicacion.etiquetas)
-    @JoinColumn({name:'id_publicacion',referencedColumnName:'id'})
-    publicacion:Publicacion;
+    @JoinTable()
+    publicacion:Publicacion; 
 }

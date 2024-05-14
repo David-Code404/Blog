@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsNotEmpty, IsString, MaxLength, MinLength } from "class-validator";
+import { IsDefined, IsNotEmpty, IsNumber, IsString, MaxLength, MinLength } from "class-validator";
 
 export class CreateImagenDto {
     @ApiProperty()
@@ -15,4 +15,9 @@ export class CreateImagenDto {
     @MaxLength(45, { message: 'El campo url de imagen no debe ser mayor a 45 caracteres' })
     @MinLength(4, { message: 'El campo url de imagen no debe ser menor a 4 caracteres' })
     url: string;
+    
+    @ApiProperty()
+    @IsDefined({ message: 'El campo idPublicacion debe estar definido' })
+    @IsNumber({}, { message: 'El campo idPublicacion debe ser de tipo numérico' })
+    readonly idPublicacion: number;
 }

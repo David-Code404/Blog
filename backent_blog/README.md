@@ -71,3 +71,50 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+Base de Datos 
+
+Usuario
+-id
+-nombre_usuario
+-clave
+
+Publicaciones(Post)
+id
+-titulo
+-contenido
+-fecha_publicacion
+-idUsuario
+
+Categorias
+id
+-nombre
+-idPublicacion
+
+
+Etiquetas(tags)
+-nombre
+-descripcion
+-idCategorias
+
+Imagenes
+-id
+-nombre
+-url
+
+
+Relaciones
+
+(Publicacion-Usario)M a 1
+un usuario  puede subir varias publicaciones 
+y una publicacion pertenece a un usuario
+
+(Categoria-Publicacion)1 a M
+dentro de una categoria  puede existir muchas publicaciones 
+y una publicacion puede pertenecer a una categoria 
+
+(Etiqueta-Publicacion)M a M
+una publicacio puede tener varios etiquetas  
+y una etiqueta puede estar en varias publicacines
+
+

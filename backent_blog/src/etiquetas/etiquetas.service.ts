@@ -48,7 +48,6 @@ export class EtiquetasService {
     const etiqueta = await this.findOne(id)
     const actualizarEtiqueta = Object.assign(etiqueta, updateEtiquetaDto);
     actualizarEtiqueta.publicacion = { id: updateEtiquetaDto.idPublicacion } as Publicacion;
-
     return this.etiquetasRepository.save(actualizarEtiqueta);
   }
 

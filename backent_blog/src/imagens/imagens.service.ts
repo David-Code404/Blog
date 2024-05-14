@@ -4,6 +4,7 @@ import { UpdateImagenDto } from './dto/update-imagen.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Imagen } from './entities/imagen.entity';
 import { Repository } from 'typeorm';
+import { Publicacion } from 'src/publicaciones/entities/publicacion.entity';
 
 @Injectable()
 export class ImagensService {
@@ -14,15 +15,19 @@ export class ImagensService {
     return this.imagensRepository.save({
       nombre:createImagenDto.nombre.trim(),
       url:createImagenDto.url.trim(),
+      publicacion:{id:createImagenDto.idPublicacion},
     });
   }
 
  async findAll():Promise<Imagen[]> {
-    return this.imagensRepository.find();
+    return this.imagensRepository.find({relations:['publicacion']});
   }
 
   async findOne(id: number):Promise<Imagen> {
-    const imagen = await this.imagensRepository.findOneBy({ id });
+    const imagen = await this.imagensRepository.findOne({ 
+      where:{id},
+      relations:['publicacion'] 
+    });
     if (!imagen) {
       throw new NotFoundException(`La imagen ${id} no existe`);
     }
@@ -32,6 +37,7 @@ export class ImagensService {
  async  update(id: number, updateImagenDto: UpdateImagenDto) :Promise<Imagen>{
   const imagen = await this.findOne(id);
   const imagenUpdate = Object.assign(imagen, updateImagenDto);
+  imagenUpdate.publicacion={id:updateImagenDto.idPublicacion} as Publicacion;
   return this.imagensRepository.save(imagenUpdate);
   }
 
