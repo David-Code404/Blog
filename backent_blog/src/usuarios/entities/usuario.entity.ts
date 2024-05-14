@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+
+import { Publicacion } from "src/publicaciones/entities/publicacion.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('usuarios')
 export class Usuario {
@@ -13,15 +15,16 @@ export class Usuario {
     @Column('varchar', { length: 50, nullable: false })
     correo: string;
 
-    @Column('varchar', { length: 45, nullable: false })
-    rol: string;
-
-    // @Column({ type: 'blob', nullable: true, name: 'imagen' })
-    // imagen: Buffer;
+    
 
     @CreateDateColumn({ name: 'fecha_creacion' })
     fechaCreacion: Date;
 
     @UpdateDateColumn({ name: 'fecha_modificacion' })
     fechaModificacion: Date;
+    //relacion uno a muchos
+    @OneToMany(()=>Publicacion,publicacion=>publicacion.usuario)
+    publicaciones:Publicacion[];
+
+    
 }

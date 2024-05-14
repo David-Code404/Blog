@@ -4,6 +4,11 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { PublicacionesModule } from './publicaciones/publicaciones.module';
+import { EtiquetasModule } from './etiquetas/etiquetas.module';
+import { CategoriasModule } from './categorias/categorias.module';
+import { ImagensModule } from './imagens/imagens.module';
+
 
 @Module({
   imports: [
@@ -20,6 +25,12 @@ import { UsuariosModule } from './usuarios/usuarios.module';
       autoLoadEntities:true,
     }),
     UsuariosModule,
+    PublicacionesModule,
+    EtiquetasModule,
+    CategoriasModule,
+    ImagensModule,
+   
+   
 
   ],
   controllers: [AppController],

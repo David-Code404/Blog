@@ -15,7 +15,7 @@ async function bootstrap() {
   .setTitle('API REST DE UN BLOG')
   .setDescription('Backend de un Blog')
   .setVersion('1.0')
-  .addTag('usuarios')
+  .addTag('usuarios,publicaciones,etiquetas,categorias,imagenes')
   .build();
 const document = SwaggerModule.createDocument(app, config);
 SwaggerModule.setup('apidocumentation', app, document);
