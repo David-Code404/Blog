@@ -38,7 +38,7 @@ const Mostrar = ()=>{
 .Img {
   background: url(../assets/Imagen/white-cubes-3d-background.jpg);
   width: 300px;
-  height: 500px;
+  height: 400px;
   border-radius: 20px;
   display: flex;
   flex-direction: column; 

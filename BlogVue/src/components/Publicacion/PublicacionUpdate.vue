@@ -1,13 +1,12 @@
-<template>
-  
-</template>
-
-<script>
-export default {
-
-}
+<script setup>
 </script>
 
-<style>
+<template>
+
+
+</template>
+
+
+<style scoped>
 
 </style>

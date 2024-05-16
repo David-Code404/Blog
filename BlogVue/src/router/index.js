@@ -10,23 +10,32 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
       path: "/login",
       name: "login",
       component: () => import("../views/LoginView.vue"),
     },
     {
-      path: "/usuario",
-      name: "usuario",
+      path: "/usuarios",
+      name: "usuarios",
       component: () => import("../views/UsuarioView.vue"),
+      children: [
+        {
+          path: "",
+          component: () => import("../components/Usuario/UsuarioList.vue"),
+        },
+        {
+          path: "crear",
+          component: () => import("../components/Usuario/UsuarioCreate.vue"),
+        },
+        {
+          path: "editar/:id",
+          component: () => import("../components/Usuario/UsuarioUpdate.vue"),
+        },
+      ],
     },
     {
-      path: "/etiqueta",
-      name: "etiqueta",
+      path: "/etiquetas",
+      name: "etiquetas",
       component: () => import("../views/EtiquetaView.vue"),
       children: [
         {
@@ -44,30 +53,28 @@ const router = createRouter({
       ],
     },
     {
-      path: "/publicacion",
-      name: "publicacion",
-      component: () => import('../views/PublicacionView.vue'),
+      path: '/publicaciones',
+      name: "publicaciones",
+      component: () => import("../views/PublicacionView.vue"),
       children: [
         {
-          path: "",
-          component: () => import('../components/Publicacion/PublicacionUpdate.vue'),
+          path: '',
+          component: () =>
+            import("../components/Publicacion/PublicacionList.vue"),
         },
         {
           path: "crear",
-          component: () => import('../components/Publicacion/PublicacionUpdate.vue'),
+          component: () =>
+            import("../components/Publicacion/PublicacionCreate.vue"),
         },
         {
-          path: "editar/:id ?",
-          name : "editar",
-          component: () => import('../components/Publicacion/PublicacionUpdate.vue'),
+          path: "editar/:id",
+          name: "editar",
+          component: () =>
+            import("../components/Publicacion/PublicacionUpdate.vue"),
         },
       ],
     },
-    {
-      path : '/contacto',
-      name : 'contacto',
-      component : () => import('../views/ContactoView.vue')
-    }
   ],
 });
 

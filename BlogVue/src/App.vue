@@ -5,10 +5,11 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/etiqueta">Etiqueta</router-link>
-    <router-link to="/contacto">Contactos</router-link>
-    <router-link to="/usuario">Usuarios</router-link>
+    <router-link to="/etiquetas_publicaciones">Etiqueta_Publicaciones</router-link>
+    <router-link to="/publicaciones_categoria">Publicaciones_Categoria</router-link>
+    <router-link to="/etiquetas">Etiquetas</router-link>
+    <router-link to="/imagenes">Imagenes</router-link>
+    <router-link to="/publicaciones">Publicaciones</router-link>
     <router-link to="/login">Login</router-link>
   </div>
   <router-view></router-view>
