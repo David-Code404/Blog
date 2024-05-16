@@ -53,12 +53,12 @@ const router = createRouter({
       ],
     },
     {
-      path: '/publicaciones',
+      path: "/publicaciones",
       name: "publicaciones",
       component: () => import("../views/PublicacionView.vue"),
       children: [
         {
-          path: '',
+          path: "",
           component: () =>
             import("../components/Publicacion/PublicacionList.vue"),
         },
@@ -72,6 +72,110 @@ const router = createRouter({
           name: "editar",
           component: () =>
             import("../components/Publicacion/PublicacionUpdate.vue"),
+        },
+      ],
+    },
+    {
+      path: "/imagenes",
+      name: "imagenes",
+      component: () => import("../views/ImagenView.vue"),
+      children: [
+        {
+          path: "",
+          component: () => import("../components/Imagen/ImagenCreate.vue"),
+        },
+        {
+          path: "crear",
+          name: "crear",
+          component: () => import("../components/Imagen/ImagenList.vue"),
+        },
+        {
+          path: "editar/:id",
+          name: "editar",
+          component: () => import("../components/Imagen/ImagenUpdate.vue"),
+        },
+      ],
+    },
+    {
+      path: "/etiquetas_publicaciones",
+      name: "etiquetas_publicaciones",
+      component: () => import("../views/Etiqueta_PublicacionView.vue"),
+      children: [
+        {
+          path: "",
+          component: () =>
+            import(
+              "../components/Etiqueta_Publicacion/Etiqueta_PublicacionCreate.vue"
+            ),
+        },
+        {
+          path: "crear",
+          name: "crear",
+          component: () =>
+            import(
+              "../components/Etiqueta_Publicacion/Etiqueta_PublicacionList.vue"
+            ),
+        },
+        {
+          path: "editar/:id",
+          name: "editar",
+          component: () =>
+            import(
+              "../components/Etiqueta_Publicacion/Etiqueta_PublicacionUpdate.vue"
+            ),
+        },
+      ],
+    },
+    {
+      path: "/publicaciones_categorias",
+      name: "publicaciones_categorias",
+      component: () => import("../views/Publicacion_CategoriaView.vue"),
+      children: [
+        {
+          path: "",
+          component: () =>
+            import(
+              "../components/Publicacion_Categoria/Publicacion_CategoriaCreate.vue"
+            ),
+        },
+        {
+          path: "crear",
+          name: "crear",
+          component: () =>
+            import(
+              "../components/Publicacion_Categoria/Publicacion_CategoriaList.vue"
+            ),
+        },
+        {
+          path: "editar/:id",
+          name: "editar",
+          component: () =>
+            import(
+              "../components/Publicacion_Categoria/Publicacion_CategoriaUpdate.vue"
+            ),
+        },
+      ],
+    },
+    {
+      path: "/categorias",
+      name: "categorias",
+      component: () => import("../views/CategoriaView.vue"),
+      children: [
+        {
+          path: "",
+          component: () =>
+            import("../components/Categoria/CategoriaCreate.vue"),
+        },
+        {
+          path: "crear",
+          name: "crear",
+          component: () => import("../components/Categoria/CategoriaList.vue"),
+        },
+        {
+          path: "editar/:id",
+          name: "editar",
+          component: () =>
+            import("../components/Categoria/CategoriaUpdate.vue"),
         },
       ],
     },
