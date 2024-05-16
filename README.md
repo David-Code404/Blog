@@ -1,5 +1,11 @@
 > [!IMPORTANT]
-do not use artificial intelligence
+No Usar Inteligencia Articial Para Hacer El Proyecto
 
 > [!CAUTION]
-do git pull before uploading your repository
+Hacer Git pull Antes De Subir Algo Nuevo
+
+
+> [!TIPS]
+
+Primero Hacer La Base De Datos
+Luego Diseño
