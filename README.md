@@ -5,5 +5,5 @@ No Usar Inteligencia Articial Para Hacer El Proyecto
 Hacer Git pull Antes De Subir Algo Nuevo
 
 
-> [!TIPS]
+> [!TIP]
 Primero Hacer La Base De Datos Luego Diseño
