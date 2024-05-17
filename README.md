@@ -6,5 +6,4 @@ Hacer Git pull Antes De Subir Algo Nuevo
 
 
 > [!TIPS]
-Primero Hacer La Base De Datos
-Luego Diseño
+Primero Hacer La Base De Datos Luego Diseño
