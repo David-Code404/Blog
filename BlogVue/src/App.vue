@@ -10,7 +10,6 @@
     <router-link to="/etiquetas">Etiquetas</router-link>
     <router-link to="/imagenes">Imagenes</router-link>
     <router-link to="/publicaciones">Publicaciones</router-link>
-    <router-link to="/publicaciones">Publicaciones</router-link>
     <router-link to="/login">Login</router-link>
   </div>
   <router-view></router-view>

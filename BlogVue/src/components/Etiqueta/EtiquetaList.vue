@@ -73,16 +73,18 @@ const etiqueta = [
   },
 ];
 
-const Delete =() =>{
+const Delete = () => {
   alert("¿Estas Seguro De Eliminar?")
 }
 
 </script>
 
 <template>
-  <div>
-    <router-link to="/">Inicio</router-link>/
-    <router-link :to="{ path: '/etiquetas/crear' }">crear</router-link>
+  <div class="container">
+    <div class="enlace">
+      <router-link to="/">Inicio</router-link>/
+      <router-link :to="{ path: '/etiquetas/crear' }">crear</router-link>
+    </div>
     <br><br>
     <table>
       <th>ID</th>
@@ -98,8 +100,8 @@ const Delete =() =>{
         <td>{{ index.fecha_creacion }}</td>
         <td>{{ index.fecha_modificaion }}</td>
         <td>
-          <RouterLink :to="{ path: '/etiquetas/editar/' + index.id }">Editar</RouterLink>
-          <button @click="Delete">Eliminar</button>
+          <RouterLink :to="{ path: '/etiquetas/editar/' + index.id }" ><button class="Editar">Editar</button></RouterLink>
+          <button @click="Delete" class="Delete">Eliminar</button>
         </td>
       </tr>
     </table>
@@ -109,11 +111,37 @@ const Delete =() =>{
 
 <style scoped>
 table th {
-  border: 2px solid rgb(148, 144, 144);
+  border: 2px solid rgb(21, 41, 40);
   border-radius: 4px;
 }
 
 tr td {
   border: 2px solid rgb(109, 109, 109);
 }
+
+.container {
+  margin-left: 200px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 20px;
+}
+
+.enlace{
+  display: flex;
+}
+
+.Delete{
+  border-radius: 20px;
+}
+.Delete:hover{
+  background-color: red;
+}
+
+.Editar{
+  border-radius: 20px;
+}
+.Editar:hover{
+  background-color: rgb(101, 225, 230);
+}
+
+
 </style>
