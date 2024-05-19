@@ -116,13 +116,14 @@ table th {
 }
 
 tr td {
-  border: 2px solid rgb(109, 109, 109);
+  border: 2px solid rgb(216, 216, 216);
 }
 
 .container {
   margin-left: 200px;
   background-color: rgb(235, 235, 235);
   border-radius: 20px;
+  padding-top: 40px 40px;
 }
 
 .enlace{

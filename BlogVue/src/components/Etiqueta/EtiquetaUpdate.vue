@@ -104,7 +104,7 @@ label {
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 800px;
+    width: 880px;
     box-sizing: border-box;
 }
 
