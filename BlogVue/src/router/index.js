@@ -163,22 +163,22 @@ const router = createRouter({
       children: [
         {
           path: "",
-          component: () =>
-            import("../components/Categoria/CategoriaCreate.vue"),
+          name: "lista",
+          component: () => import("../components/Categoria/CategoriaList.vue"),
         },
         {
           path: "crear",
           name: "crear",
-          component: () => import("../components/Categoria/CategoriaList.vue"),
+          component: () => import("../components/Categoria/CategoriaCreate.vue"),
         },
         {
           path: "editar/:id",
           name: "editar",
-          component: () =>
-            import("../components/Categoria/CategoriaUpdate.vue"),
+          component: () => import("../components/Categoria/CategoriaUpdate.vue"),
         },
       ],
     },
+    
   ],
 });
 

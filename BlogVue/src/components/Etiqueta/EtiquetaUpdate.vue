@@ -3,7 +3,6 @@
 import { ref } from 'vue';
 
 
-const id = ref(0)
 const nombre = ref('')
 const descripcion = ref('')
 const fecha_creacion = ref('')

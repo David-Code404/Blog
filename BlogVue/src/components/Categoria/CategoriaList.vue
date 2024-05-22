@@ -1,81 +1,145 @@
 <script setup>
-import axios from 'axios';
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
-const categorias = ref([]);
 
-async function getCategorias() {
-    try {
-        const response = await axios.get('http://127.0.0.1:3000/api/v1/categorias');
-        categorias.value = response.data;
-    } catch (error) {
-        console.error('Erro Al Absorver datos de categorias :', error);
-    }
-}
+const categorias = ref([
+  {
+    id: 1,
+    nombre: "Viaje",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 2,
+    nombre: "Naturaleza",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 3,
+    nombre: "Comida",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 4,
+    nombre: "Arquitectura",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 5,
+    nombre: "Animales",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 6,
+    nombre: "Deportes",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 7,
+    nombre: "Tecnología",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 8,
+    nombre: "Moda",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 9,
+    nombre: "Música",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+  {
+    id: 10,
+    nombre: "Familia",
+    fecha_publicacion: "2024-05-25",
+    fecha_modificacion: "2024-05-25",
+  },
+]);
 
-function toEdit(id) {
-    console.log('Edit category with id:', id);
-}
 
-function toDelete(id) {
-    console.log('Delete category with id:', id);
-}
 
-onMounted(() => {
-    getCategorias();
-});
+
 </script>
 
 <template>
-    <div class="container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <RouterLink to="/">Inicio</RouterLink>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Categorías</li>
-            </ol>
-        </nav>
-
-        <div class="row">
-            <h2>Lista de Categorías</h2>
-            <div class="col-12">
-                <RouterLink to="/categorias/crear">
-                    <font-awesome-icon icon="fa-solid fa-plus" /> Crear Nueva Categoría
-                </RouterLink>
-            </div>
-        </div>
-
-        <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                    <tr style="background-color: black;">
-                        <th scope="col" style="color: white;">N°</th>
-                        <th scope="col" style="color: white;">Descripción</th>
-                        <th scope="col" style="color: white;">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(categoria, index) in categorias" :key="categoria.id">
-                        <th scope="row">{{ index + 1 }}</th>
-                        <td>{{ categoria.descripcion }}</td>
-                        <td>
-                            <button class="btn text-success" @click="toEdit(categoria.id)">
-                                <font-awesome-icon icon="fa-solid fa-edit" />
-                                Editar
-                            </button>
-                            <button class="btn text-danger" @click="toDelete(categoria.id)">
-                                <font-awesome-icon icon="fa-solid fa-trash" />
-                                Eliminar
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+  <div class="container">
+    <div class="enlace">
+      <RouterLink to="/">Inicio</RouterLink>/
+      <RouterLink :to="{ path: '/categorias/crear' }">crear</RouterLink>
     </div>
+    <br><br>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Fecha_Creacion</th>
+          <th>Fecha_Modificacion</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="categoria in categorias" :key="categoria.id">
+          <td>{{ categoria.id }}</td>
+          <td>{{ categoria.nombre }}</td>
+          <td>{{ categoria.fecha_publicacion }}</td>
+          <td>{{ categoria.fecha_modificacion }}</td>
+          <td>
+            <RouterLink :to="{ path: '/categorias/editar/' + categoria.id }">
+              <button class="Editar">Editar</button>
+            </RouterLink>
+            <button @click="deleteCategoria(categoria.id)" class="Delete">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <router-view></router-view>
 </template>
 
-<style>
+<style scoped>
+table th {
+  border: 2px solid rgb(21, 41, 40);
+  border-radius: 4px;
+}
 
+tr td {
+  border: 2px solid rgb(216, 216, 216);
+}
+
+.container {
+  margin-left: 200px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 20px;
+  padding-top: 40px 40px;
+}
+
+.enlace {
+  display: flex;
+}
+
+.Delete {
+  border-radius: 20px;
+}
+
+.Delete:hover {
+  background-color: red;
+}
+
+.Editar {
+  border-radius: 20px;
+}
+
+.Editar:hover {
+  background-color: rgb(101, 225, 230);
+}
 </style>

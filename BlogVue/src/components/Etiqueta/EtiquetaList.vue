@@ -73,9 +73,7 @@ const etiqueta = [
   },
 ];
 
-const Delete = () => {
-  alert("¿Estas Seguro De Eliminar?")
-}
+
 
 </script>
 
