@@ -76,27 +76,6 @@ const router = createRouter({
       ],
     },
     {
-      path: "/imagenes",
-      name: "imagenes",
-      component: () => import("../views/ImagenView.vue"),
-      children: [
-        {
-          path: "",
-          component: () => import("../components/Imagen/ImagenCreate.vue"),
-        },
-        {
-          path: "crear",
-          name: "crear",
-          component: () => import("../components/Imagen/ImagenList.vue"),
-        },
-        {
-          path: "editar/:id",
-          name: "editar",
-          component: () => import("../components/Imagen/ImagenUpdate.vue"),
-        },
-      ],
-    },
-    {
       path: "/etiquetas_publicaciones",
       name: "etiquetas_publicaciones",
       component: () => import("../views/Etiqueta_PublicacionView.vue"),
@@ -169,16 +148,39 @@ const router = createRouter({
         {
           path: "crear",
           name: "crear",
-          component: () => import("../components/Categoria/CategoriaCreate.vue"),
+          component: () =>
+            import("../components/Categoria/CategoriaCreate.vue"),
         },
         {
           path: "editar/:id",
           name: "editar",
-          component: () => import("../components/Categoria/CategoriaUpdate.vue"),
+          component: () =>
+            import("../components/Categoria/CategoriaUpdate.vue"),
         },
       ],
     },
-    
+    {
+      path: "/imagenes",
+      name: "imagenes",
+      component: () => import("../views/ImagenView.vue"),
+      children: [
+        {
+          path: "",
+          name: "listas",
+          component: () => import("../components/Imagen/ImagenList.vue"),
+        },
+        {
+          path: "crear",
+          name: "crear",
+          component: () => import("../components/Imagen/ImagenCreate.vue"),
+        },
+        {
+          path: "editar/:id",
+          name: "editar",
+          component: () => import("../components/Imagen/ImagenUpdate.vue"),
+        },
+      ],
+    },
   ],
 });
 
